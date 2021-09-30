@@ -1,4 +1,4 @@
-package com.andree.evaluacion.services;
+package com.andree.evaluacion.utils;
 
 import com.andree.evaluacion.configuration.Config;
 import io.jsonwebtoken.Claims;
@@ -8,7 +8,8 @@ import io.jsonwebtoken.impl.crypto.DefaultJwtSignatureValidator;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
-public class JWTService {
+public class JWTUtils {
+
     public static String createJWT(int id,String name, String email) {
         Claims claims = Jwts.claims().setSubject("Token de acceso");
         claims.put("Id",  id);
